@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Not Available</title>
+    <style>
+      body {
+        background-color: #eaf6ff; /* Light Blue */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        color: #1e90ff; /* Dodger Blue */
+        margin-bottom: 20px;
+      }
+
+      .animation {
+        animation-name: notAvailableAnimation;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes notAvailableAnimation {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .go-home-button {
+        background-color: #1e90ff;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        transition-duration: 0.3s;
+      }
+
+      .go-home-button:hover {
+        background-color: #0080ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container animation">
+      <h1>Data Not Available</h1>
+      <p>Sorry, there is no data available for the selected date.</p>
+    </div>
+
+    <div>
+      <button class="go-home-button">
+        <a href="/dashboard" style="text-decoration: none; color: white"
+          >Go to Home</a
+        >
+      </button>
+    </div>
+  </body>
+</html>

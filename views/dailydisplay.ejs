@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petty Cash Book</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="images/wallet.png"
+      style="border-radius: 2rem"
+    />
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Sono:wght@200;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="css/bootstrap-icons.css" />
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <link href="css/templatemo-pod-talk.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-md">
+        <div class="container">
+          <a class="navbar-brand me-lg-5 me-0" href="login">
+            <img
+              src="images/money-bag.png"
+              class="logo-image nav-logo img-fluid"
+              alt="petty cash Book"
+              style="width: fit-content"
+            />
+          </a>
+          <div class="ms-4">
+            <a
+              href="login"
+              class="btn custom-btn custom-border-btn smoothscroll"
+              >Get started</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <!-- Login Section -->
+      <section class="hero-section">
+
+
+        <!-- datte display -->
+        <div style="padding-left: 10%; font-size: 1rem; ">
+          <h2>Date:<%=date%></h2>
+        </div>
+
+        <div class="container">
+          <section class="vh-100 gradient-custom">
+            <div class="container py-2 h-100">
+              <div class="container">
+                <h2 class="fw-bold mb-4">Income and Expenses</h2>
+                <table class="table table-striped table-bordered">
+                  <thead class="table-success">
+                    <tr>
+                      <th scope="col">S.No</th>
+                      <th scope="col">Income Head</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-striped table-primary">
+                    <% income.forEach( (item,index) => { %>
+                    <tr>
+                      <td><%= index+1 %></td>
+                      <td><%= item.name %></td>
+                      <td>₹<%= item.amount %></td>
+                    </tr>
+
+                    <% }) %>
+
+                    <thead class="table-success">
+                      <tr>
+                        <th scope="col">S.No</th>
+                        <th scope="col">Expense Head</th>
+                        <th scope="col">Amount</th>
+                      </tr>
+                    </thead>
+                  </tbody>
+
+                  <tbody class="table-striped table-primary">
+                    <% expense.forEach( (item,index) => { %>
+                    <tr>
+                      <td><%= index+1 %></td>
+                      <td><%= item.name %></td>
+                      <td>₹<%= item.amount %></td>
+                    </tr>
+
+                    <% }) %>
+
+                    <tr class="table-success">
+                      <th scope="row">Opening Balance</th>
+                      <td colspan="2">₹<%= balance.yestbalance %></td>
+                    </tr>
+                    <tr class="table-success">
+                      <th scope="row">Total Income</th>
+                      <td colspan="2">₹<%= balance.totalincome %></td>
+                    </tr>
+                    <tr class="table-success">
+                      <th scope="row">Total Expenditure</th>
+                      <td colspan="2">₹<%= balance.totalexpense %></td>
+                    </tr>
+                    <tr class="table-success">
+                      <th scope="row">Closing Balance Balance</th>
+                      <td colspan="2">₹<%= balance.balance %></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button onclick="window.print()" style="margin-left:45%; background-color: rgba(57, 95, 178, 0.811); font-size: large; font-weight: 700; border-radius: 12px;">Print Report</button>
+              </div>
+            </div>
+          </section>
+  
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

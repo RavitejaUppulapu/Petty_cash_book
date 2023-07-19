@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petty Cash Book</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="images/wallet.png"
+      style="border-radius: 2rem"
+    />
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Sono:wght@200;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .navbar {
+        background: #667eea;
+        padding: 10px 20px;
+      }
+
+      .navbar-brand {
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.2rem;
+        text-decoration: none;
+      }
+
+      .hero-section {
+        display: flex;
+      }
+
+      .left-side {
+        flex: 1;
+        padding: 2rem 1rem;
+        background: linear-gradient(to right, #667eea 25%, #ffffff 25%);
+        background-size: 400% 100%;
+        animation: gradientAnimation 3s ease-in-out infinite;
+      }
+
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 100% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+
+      .right-side {
+        flex: 1;
+        padding: 2rem 1rem;
+        background-color: #f8f9fa;
+      }
+
+      .card {
+        border-radius: 1rem;
+      }
+
+      .form-control {
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+    <link href="css/templatemo-pod-talk.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-md">
+        <div class="container">
+          <a class="navbar-brand me-lg-5 me-0" href="dashboard">
+            <img
+              src="images/money-bag.png"
+              class="logo-image nav-logo img-fluid"
+              alt="petty cash Book"
+              style="width: fit-content"
+            />
+          </a>
+          <div class="ms-4">
+            <a
+              href="dashboard"
+              class="btn custom-btn custom-border-btn smoothscroll"
+              >Get started</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <!-- Content Section -->
+      <section class="hero-section">
+        <div class="left-side">
+          <div class="card text-dark">
+            <div class="card-body p-6 text-center">
+              <h2 class="fw-bold mb-4 text-uppercase">
+                Create New Expense Head
+              </h2>
+              <form action="/expensehead" method="post">
+                <div class="form-outline form-dark mb-3">
+                  <label class="form-label" for="name">Head Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control form-control-lg"
+                    placeholder="Enter your Head Name"
+                  />
+                </div>
+                <div class="form-outline form-dark mb-3">
+                  <label class="form-label" for="description"
+                    >Description</label
+                  >
+                  <input
+                    type="text"
+                    id="description"
+                    name="description"
+                    class="form-control form-control-lg"
+                    placeholder="Enter your description"
+                  />
+                </div>
+                <button class="btn btn-outline-dark btn-lg px-5" type="submit">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="right-side" style="background-color: #667eea">
+          <ul>
+            <% data.forEach( (item) => { %>
+            <li style="color: black; font-size: 1.8rem"><%= item.name %></li>
+            <% } ) %>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

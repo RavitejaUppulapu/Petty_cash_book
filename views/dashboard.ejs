@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="images/wallet.png"
+      style="border-radius: 2rem"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Petty Cash Book</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Sono:wght@200;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="css/bootstrap-icons.css" />
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <link href="css/templatemo-pod-talk.css" rel="stylesheet" />
+
+    <style>
+      .contributor-card .card-title {
+        margin-bottom: 0.5rem;
+      }
+
+      .contributor-card .social-links {
+        margin-top: 1rem;
+      }
+
+      .contributor-card .social-links .btn {
+        margin-right: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand me-lg-5 me-0" href="login">
+            <img
+              src="images/money-bag.png"
+              class="logo-image nav-logo img-fluid"
+              alt="petty cash Book"
+              style="width: fit-content"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarLightDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Create Head</a
+                >
+
+                <ul
+                  class="dropdown-menu dropdown-menu-light"
+                  aria-labelledby="navbarLightDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="/expensehead"
+                      >Expences Head</a
+                    >
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="/incomehead">Income Head</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarLightDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Income/Expense Head</a
+                >
+
+                <ul
+                  class="dropdown-menu dropdown-menu-light"
+                  aria-labelledby="navbarLightDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="/dailyexpenditure"
+                      >Add Expences</a
+                    >
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="/dailyincome">Add Income</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarLightDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Profile</a
+                >
+
+                <ul
+                  class="dropdown-menu dropdown-menu-light"
+                  aria-labelledby="navbarLightDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#"><%= data.name %></a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"><%= data.mail %></a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Update Profile</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <!-- <div class="ms-4">
+              <a
+                href="#section_3"
+                class="btn custom-btn custom-border-btn smoothscroll"
+                >Get started</a
+              >
+            </div> -->
+          </div>
+        </div>
+      </nav>
+
+      <section class="hero-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-12">
+              <div class="text-center mb-5 pb-2">
+                <h1 class="text-black">Welcome to our Petty Cash Book</h1>
+
+                <p class="myblack" style="font-size: 2opx; font-weight: 400">
+                  Petty Cash Book - the essential tool for managing and tracking
+                  small expenses efficiently.
+                </p>
+
+                <a href="#section_2" class="btn custom-btn smoothscroll mt-3"
+                  >View Reports</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="latest-podcast-section section-padding pb-0"
+        id="section_2"
+      >
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-12 col-12">
+              <div class="section-title-wrap mb-5">
+                <h4 class="section-title">Latest Reports</h4>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+              <div
+                class="custom-block d-flex"
+                style="background-color: rgba(72, 182, 218, 0.341)"
+              >
+                <div class="">
+                  <img
+                    src="images/money_button.png"
+                    style="height: 100px; width: 100px"
+                    alt="monthly_button"
+                  />
+                </div>
+
+                <div class="custom-block-info">
+                  <h5 class="mb-2">
+                    <a href="#"> Daily Expences</a>
+                  </h5>
+
+                  <div class="mt-2">
+                    <form action="/dailydisplay" method="post">
+                      <input
+                        type="date"
+                        name="date"
+                        style="background-color: rgba(72, 182, 218, 0.341)"
+                        id="dateInput"
+                      />
+
+                      <button
+                        type="submit"
+                        class="btn custom-btn"
+                        style="margin-left: 2px"
+                      >
+                        Check
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+              <div
+                class="custom-block d-flex"
+                style="background-color: rgba(72, 182, 218, 0.341)"
+              >
+                <div class="">
+                  <img
+                    src="images/money_button.png"
+                    style="height: 100px; width: 100px"
+                    alt="monthly_button"
+                  />
+                </div>
+
+                <div class="custom-block-info">
+                  <h5 class="mb-2">
+                    <a href="#"> Monthly Expences</a>
+                  </h5>
+
+                  <div class="mt-2">
+                    <form action="/monthlydisplay" method="post">
+                      <select
+                        name="month"
+                        id="monthSelect"
+                        style="background-color: rgba(72, 182, 218, 0.341)"
+                      >
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+                      <button
+                        type="submit"
+                        class="btn custom-btn"
+                        style="margin-left: 2px"
+                      >
+                        Check
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="search-by-dates-section" style="margin-top: 6%">
+      <div class="container">
+        <h4 class="section-title mb-4">Search by Dates</h4>
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <form
+              class="search-form"
+              style="background-color: rgba(72, 182, 218, 0.341); padding: 20px"
+              action="/betweendisplay"
+              method="post"
+            >
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    <label for="startdate">Start Date</label>
+                    <input
+                      type="date"
+                      id="startdate"
+                      class="form-control"
+                      name="startdate"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    <label for="enddate">End Date</label>
+                    <input
+                      type="date"
+                      id="enddate"
+                      class="form-control"
+                      name="enddate"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit">Get</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <h4 class="section-title mb-4 text-center">Special Thanks to</h4>
+        <div class="row justify-content-center">
+          <!-- Added justify-content-center -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card contributor-card">
+              <img
+                src="https://iare-data.s3.ap-south-1.amazonaws.com/uploads/IARE/STAFF/IARE10209/DOC/IARE10209_PHOTO.jpg"
+                class="card-img-top contributor-img"
+                alt="Contributor 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center mb-2">Padmaja Mam</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repeat the following code block for other contributors -->
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card contributor-card">
+              <img
+                src="https://iare-data.s3.ap-south-1.amazonaws.com/uploads/IARE/STAFF/IARE10237/DOC/IARE10237_PHOTO.jpg"
+                class="card-img-top contributor-img"
+                alt="Contributor 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center mb-2">Patro Sir</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card contributor-card">
+              <img
+                src="https://iare-data.s3.ap-south-1.amazonaws.com/uploads/IARE/STAFF/IARE20232/DOC/IARE20232_PHOTO.jpg"
+                class="card-img-top contributor-img"
+                style="height: 300px"
+                alt="Contributor 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center mb-2">Surya Narayana Sir</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <h4 class="section-title mb-4">Contributors</h4>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card contributor-card">
+              <img
+                src="images/rama.jpg"
+                class="card-img-top contributor-img"
+                alt="Contributor 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center mb-2">Vivek</h5>
+                <div class="social-links text-center">
+                  <a
+                    href="https://www.linkedin.com/in/konavivekramakrishna/"
+                    class="btn btn-primary"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a
+                    href="https://github.com/konavivekramakrishna"
+                    class="btn btn-primary"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repeat the following code block for other contributors -->
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card contributor-card">
+              <img
+                src="images/ravi.jpg"
+                class="card-img-top contributor-img"
+                alt="Contributor 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center mb-2">Raviteja</h5>
+                <div class="social-links text-center">
+                  <a
+                    href="https://www.linkedin.com/in/raviteja-uppulapu-149354246/"
+                    class="btn btn-primary"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a
+                    href="https://github.com/RavitejaUppulapu"
+                    class="btn btn-primary"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card contributor-card">
+              <img
+                src="images/vasanth.jpg"
+                class="card-img-top contributor-img"
+                alt="Contributor 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center mb-2">Vasanth</h5>
+                <div class="social-links text-center">
+                  <a
+                    href="https://www.linkedin.com/in/vasanth-n-07aaa01b3/"
+                    class="btn btn-primary"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a
+                    href="https://github.com/Vasanth375"
+                    class="btn btn-primary"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card contributor-card">
+              <img
+                src="images/bhuvi.jpg"
+                class="card-img-top contributor-img"
+                alt="Contributor 4"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center mb-2">Bhuvaneswar</h5>
+                <div class="social-links text-center">
+                  <a
+                    href="https://www.linkedin.com/in/bhuvaneswar-sankranthi-7606671b9/"
+                    class="btn btn-primary"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a
+                    href="https://github.com/Bhuvaneswar26"
+                    class="btn btn-primary"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ba6d17dfa2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Function to format the date as YYYY-MM-DD
+      const formatDate = (date) => {
+        const year = date.getFullYear();
+        const month = ("0" + (date.getMonth() + 1)).slice(-2);
+        const day = ("0" + date.getDate()).slice(-2);
+        return `${year}-${month}-${day}`;
+      };
+
+      // Get the current date
+      const today = new Date();
+
+      // Format the date as YYYY-MM-DD
+      const formattedDate = formatDate(today);
+
+      // Set the value of the date input field
+      document.getElementById("dateInput").value = formattedDate;
+
+      // Set the value of the month select field
+      document.getElementById("monthSelect").value = (
+        today.getMonth() + 1
+      ).toString();
+
+      // Add an event listener to the window object to set the default month and date on page load
+      window.addEventListener("load", () => {
+        document.getElementById("dateInput").value = formattedDate;
+        document.getElementById("monthSelect").value = "07";
+      });
+    </script>
+
+    <script type="text/javascript">
+      (function (I, L, T, i, c, k, s) {
+        if (I.iticks) return;
+        I.iticks = { host: c, settings: s, clientId: k, cdn: L, queue: [] };
+        var h = T.head || T.documentElement;
+        var e = T.createElement(i);
+        var l = I.location;
+        e.async = true;
+        e.src = (L || c) + "/client/inject-v2.min.js";
+        h.insertBefore(e, h.firstChild);
+        I.iticks.call = function (a, b) {
+          I.iticks.queue.push([a, b]);
+        };
+      })(
+        window,
+        "https://cdn-v1.intelliticks.com/prod/common",
+        document,
+        "script",
+        "https://app.intelliticks.com",
+        "T4hLf6hznaCbHuo5D_c",
+        {}
+      );
+    </script>
+  </body>
+</html>
